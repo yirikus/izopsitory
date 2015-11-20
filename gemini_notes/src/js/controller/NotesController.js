@@ -1,9 +1,12 @@
 //started at 19.30 - 1.15
+//20.30 -
 (function(){
     'use strict';
-    gmn.app.controller('NotesController', ['NotesService', '$state',
-        function(NotesService, $state){
+    gmn.app.controller('NotesController', ['NotesService', '$state', '$stateParams',
+        function(NotesService, $state, $stateParams){
             this.formdata = {};
+            this.stateParams = $stateParams;
+
             this.getNotes = function() {
                 return NotesService.getNotes();
             };
@@ -25,13 +28,14 @@
             };
 
             this.showEdit = function(noteId) {
-                $state.go('notes.edit',{'noteId': noteId});
+                this.formdata.newTitle = 'x';
+                $state.go('notes.edit',{'id': noteId});
             };
 
             this.submitNoteChange = function() {
-                NotesService.editNote(this.formdata.noteName,
-                                      this.formdata.noteText );
-                this.formdata.editShown = false;
+                NotesService.editNote(this.stateParams.id,
+                                      this.formdata.newTitle );
+                $state.go('^');
             }
 
     }]);

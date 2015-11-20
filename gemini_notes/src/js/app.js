@@ -3,8 +3,8 @@ var gmn = {};
 (function(){
     'use strict';
     gmn.app = angular.module('gmn',['ui.router']);
-    gmn.app.config(['$stateProvider', '$urlRouterProvider',
-        function ($stateProvider,   $urlRouterProvider) {
+    gmn.app.config(['$stateProvider', '$urlRouterProvider',function (
+        $stateProvider,   $urlRouterProvider) {
 
             $urlRouterProvider.otherwise('/');
 
@@ -16,11 +16,9 @@ var gmn = {};
             });
 
             $stateProvider.state('notes.edit', {
-                url: '/edit',
+                url: 'edit/{id}',
                 templateUrl: 'templates/editNote.html',
-                controller: function(){
-                    this.title = 'My Contacts';
-                },
+                controller: 'NotesController',
                 controllerAs: 'contact'
             });
         }]);

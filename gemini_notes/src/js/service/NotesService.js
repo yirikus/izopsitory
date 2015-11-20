@@ -6,9 +6,9 @@
 
             var notes = [
                 {id:'1', title: 'note1'},
-                {id:'1', title: 'note2'},
-                {id:'1', title: 'note3'},
-                {id:'1', title: 'note4'}
+                {id:'2', title: 'note2'},
+                {id:'3', title: 'note3'},
+                {id:'4', title: 'note4'}
             ];
 
             notesServiceFactory.getNotes = function () {
