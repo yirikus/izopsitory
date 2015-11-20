@@ -17,4 +17,4 @@ Front-end is created using AngularJs, AngularUI-Router and Bootstrap with Boostr
 `gulp build`
 
 ##running
-`gulp connect`
+`node server`
