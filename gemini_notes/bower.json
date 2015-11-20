@@ -1,0 +1,9 @@
+{
+    "name": "gemini-notes",
+    "version": "0.1.0",
+    "authors": "jir Kus",
+    "dependencies": {
+        "angular": "~1.4.7",
+        "angular-ui-router": "~0.2.15"
+    }
+}

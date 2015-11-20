@@ -1,0 +1,6 @@
+<p data-ng-show="notes.formdata.editShown">
+    <label for="editNote">Editing note {{notes.formdata.noteName}}</label>
+    <textarea id="editNote" data-ng-model="notes.formdata.noteText">
+    </textarea>
+    <button data-ng-click="notes.submitNoteChange()">Submit</button>
+</p>
