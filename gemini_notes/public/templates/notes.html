@@ -1,8 +1,0 @@
-<div data-ng-controller="NotesController as notes">
-    <ul>
-        <li data-ng-repeat="note in notes.getNotes()">
-            <span>{{note.title}}</span>
-            <button data-ng-click="notes.showEdit(note.id)">edit note</button>
-        </li>
-    </ul>
-</div>
