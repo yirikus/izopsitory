@@ -1,6 +1,6 @@
-<h1>Create a new note</h1>
+<h1>{{'add_note_title' | translate}}</h1>
 <p>
-    <textarea data-ng-model="notes.formdata.noteTitle">Write a title</textarea>
-    <button data-ng-click="notes.createNewNote(notes.formdata.newTitle)">Submit</button>
-    <button data-ng-click="notes.goBack()">close</button>
+    <textarea data-ng-model="notes.formdata.noteTitle"></textarea>
+    <button data-ng-click="notes.createNewNote(notes.formdata.newTitle)">{{'submit_note_add' | translate}}</button>
+    <button data-ng-click="notes.goBack()">{{'go_back' | translate}}</button>
 </p>

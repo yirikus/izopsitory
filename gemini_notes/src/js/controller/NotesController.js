@@ -3,12 +3,18 @@
 //18.50 -
 (function(){
     'use strict';
-    gmn.app.controller('NotesController', ['NotesService', '$state', '$stateParams', '$log',
-        function(NotesService, $state, $stateParams, $log){
+    gmn.app.controller('NotesController', ['NotesService', '$state', '$stateParams', '$log', '$translate',
+        function(NotesService, $state, $stateParams, $log, $translate){
             //object to store data user typed to a form
-            this.formdata = {};
+            this.formdata = {language: $translate.use()};
             this.stateParams = $stateParams;
             var notesCache = [];
+            this.languageCodelist = [
+                {id:'en', label: $translate.instant('en')},
+                {id:'cz', label: $translate.instant('cz')},
+                {id:'ru', label: $translate.instant('ru')}];
+
+            $log.debug('using language ' + $translate.use());
 
             function init() {
                 //init note list cache
@@ -28,8 +34,9 @@
                 return notesCache;
             };
 
-            this.switchLanguage = function() {
-
+            this.changeLanguage = function() {
+                $translate.use(this.formdata.language);
+                $log.debug('using language ' + $translate.use());
             };
 
             /**

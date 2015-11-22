@@ -1,0 +1,17 @@
+{
+    "en": "English",
+    "cz": "\u010Ce\u0161tina",
+    "ru": "\u0440\u0443\u0441\u0441\u043A\u0438\u0439",
+
+    "add_note": "P\u0159idej pozn\u00E1mku",
+    "note_detail": "Detail",
+    "delete_note": "Smazat",
+    "edit_note": "Upravit",
+    "submit_note_add": "Odeslat",
+    "submit_note_edit": "Odeslat",
+    "go_back": "Zru\u0161it",
+    "edit_note_title": "\u00DAprava pozn\u00E1mky",
+    "add_note_title": "Vytvo\u0159e\u00ED nov\u00E9 pozn\u00E1mky",
+    "note_detail_title": "Detail pozn\u00E1mky",
+    "app_title": "Gemini Pozn\u00E1mky"
+}

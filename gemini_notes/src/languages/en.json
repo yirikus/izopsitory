@@ -1,0 +1,17 @@
+{
+    "en": "English",
+    "cz": "\u010Ce\u0161tina",
+    "ru": "\u0440\u0443\u0441\u0441\u043A\u0438\u0439",
+
+    "add_note": "Add a note",
+    "note_detail": "Detail",
+    "delete_note": "Delete",
+    "edit_note": "Edit",
+    "submit_note_add": "Submit",
+    "submit_note_edit": "Submit",
+    "go_back": "Cancel",
+    "edit_note_title": "Edit a note",
+    "add_note_title": "Add a note",
+    "note_detail_title": "Note detail",
+    "app_title": "Gemini Notes"
+}

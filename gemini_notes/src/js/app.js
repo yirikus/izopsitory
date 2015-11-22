@@ -2,10 +2,20 @@
 var gmn = {};
 (function(){
     'use strict';
-    gmn.app = angular.module('gmn',['ui.router']);
-    gmn.app.config(['$stateProvider', '$urlRouterProvider',function (
-        $stateProvider,   $urlRouterProvider) {
+    gmn.app = angular.module('gmn',['ui.router', 'pascalprecht.translate']);
+    gmn.app.config(['$stateProvider', '$urlRouterProvider', '$translateProvider',
+        function ($stateProvider,   $urlRouterProvider, $translateProvider) {
 
+            // load translations
+            $translateProvider.useStaticFilesLoader({
+                prefix: 'languages/',
+                suffix: '.json'
+            });
+
+            $translateProvider.preferredLanguage('en');
+            $translateProvider.useLocalStorage();
+
+            //set up routing
             $urlRouterProvider.otherwise('/');
 
             $stateProvider.state('notes', {

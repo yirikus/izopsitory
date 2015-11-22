@@ -1,9 +1,11 @@
 {
-    "name": "gemini-notes",
-    "version": "0.1.0",
-    "authors": "Jiri Kus",
-    "dependencies": {
-        "angular": "~1.4.7",
-        "angular-ui-router": "~0.2.15"
-    }
+  "name": "gemini-notes",
+  "version": "0.1.0",
+  "authors": "Jiri Kus",
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-ui-router": "~0.2.15",
+    "angular-translate": "~2.8.1",
+    "angular-translate-loader-static-files": "~2.8.1"
+  }
 }

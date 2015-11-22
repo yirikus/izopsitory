@@ -24,6 +24,9 @@ gulp.task('js', function() {
               'src/js/controller/**/*.js'])
         .pipe(concat('main.js'))
         .pipe(gulp.dest(__dirname +  '/public/js'));
+
+    gulp.src('src/**/*.json')
+        .pipe(gulp.dest(__dirname +  '/public'));
 });
 
 //build pages

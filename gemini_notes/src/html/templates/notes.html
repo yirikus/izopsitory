@@ -1,12 +1,14 @@
 <div data-ng-controller="NotesController as notes">
+    <h1>{{'app_title' | translate}}</h1>
+    <select data-ng-model="notes.formdata.language" data-ng-options="obj.id as obj.label for obj in notes.languageCodelist" data-ng-change="notes.changeLanguage()"></select>
     <ul>
         <li data-ng-repeat="note in notes.getNotes()">
             <span>{{note.title}}</span>
-            <button data-ng-click="notes.showEdit(note.id)">edit</button>
-            <button data-ng-click="notes.showDetail(note.id)">detail</button>
-            <button data-ng-click="notes.deleteNote(note.id)">delete</button>
+            <button data-ng-click="notes.showEdit(note.id)">{{'edit_note' | translate}}</button>
+            <button data-ng-click="notes.showDetail(note.id)">{{'note_detail' | translate}}</button>
+            <button data-ng-click="notes.deleteNote(note.id)">{{'delete_note' | translate}}</button>
         </li>
     </ul>
-    <button data-ng-click="notes.showAdd()">Add a note</button>
+    <button data-ng-click="notes.showAdd()">{{'add_note' | translate}}</button>
     <section data-ui-view=""></section>
 </div>
