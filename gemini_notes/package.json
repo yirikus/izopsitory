@@ -9,6 +9,7 @@
     "angular-ui-router": "~0.2.15"
   },
   "devDependencies": {
+    "config.json": "0.0.4",
     "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",

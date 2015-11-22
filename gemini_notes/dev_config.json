@@ -1,0 +1,13 @@
+{
+    "configName": "development",
+    "indexPath": "public/index.htm",
+    "port": 9000,
+    "staticFolder": "/public",
+    "ws": {
+        "notes": {
+            "host": "private-anon-1b1ee710b-note10.apiary-mock.com",
+            "port": 80,
+            "path": "/notes"
+
+    }}
+}

@@ -1,22 +1,21 @@
 var express = require('express');
 var http = require('http');
 var app = express();
-var PORT = 9000;
-app.use(express.static(__dirname + '/public'));
+var config = require('config.json')('./dev_config.json');
+app.use(express.static(__dirname + config.staticFolder));
 
 app.get('/', function(req, res) {
-    res.sendFile('public/index.htm', {root: __dirname });
+    res.sendFile(config.indexPath, {root: __dirname });
 });
 
 // PROXY to mock api
-
 var request = function(req, res, logName, method) {
     console.log(logName + ' request: ' + req.params.noteId + ': ' + JSON.stringify(req.body));
     var urlParam = req.params.noteId ? '/' + req.params.noteId : '';
     var options = {
-        host: 'private-anon-1b1ee710b-note10.apiary-mock.com',
-        port: 80,
-        path: '/notes' + urlParam,
+        host: config.ws.notes.host,
+        port: config.ws.notes.port,
+        path: config.ws.notes.path + urlParam,
         method: method
     };
 
@@ -61,5 +60,5 @@ app.delete('/api/notes/:noteId', function(req, res) {
     request(req, res,'DELETE_NOTE','DELETE');
 });
 
-app.listen(PORT);
-console.log("Listening on port " + PORT);
+app.listen(config.port);
+console.log("Listening on port " + config.port + " using '" + config.configName + "' configuration");
