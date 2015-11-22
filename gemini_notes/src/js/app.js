@@ -22,4 +22,14 @@ var gmn = {};
                 controllerAs: 'contact'
             });
         }]);
+
+    /**
+     * Global utility functions
+     */
+    gmn.util = {
+        isDefined: function(value) {
+            return value !== null && value !== '' && value !== undefined;
+        }
+    };
+
 })();

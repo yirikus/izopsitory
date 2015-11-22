@@ -9,8 +9,11 @@
     "angular-ui-router": "~0.2.15"
   },
   "devDependencies": {
+    "body-parser": "^1.14.1",
     "config.json": "0.0.4",
+    "connect-multiparty": "^2.0.0",
     "express": "^4.13.3",
+    "express-json": "^1.0.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-filter": "^3.0.1",

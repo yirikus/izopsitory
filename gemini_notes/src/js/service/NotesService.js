@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    gmn.app.factory('NotesService', ['$http',
-        function ($http) {
+    gmn.app.factory('NotesService', ['$http', '$log',
+        function ($http, $log) {
             var notesServiceFactory = {};
 
             /**
@@ -9,8 +9,12 @@
              * @returns {*} promise
              */
             notesServiceFactory.getNotes = function () {
-                return $http({method:'GET', url: 'api/notes'})
+                $log.debug('Sending "getNotes" request to server ');
+                return $http({
+                    'method':'GET',
+                    'url': 'api/notes'})
                     .success(function(data){
+                        //default success method
                         console.log(JSON.stringify(data));
                     });
             };
@@ -19,8 +23,25 @@
                 return {};
             };
 
-            notesServiceFactory.editNote = function (id) {
-                alert('edit ' + id);
+            /**
+             * Sends request to WS to edit note with given id
+             * @param id id of note to edit
+             * @param title new title of note
+             * @returns {*} promise
+             */
+            notesServiceFactory.editNote = function (id, title) {
+                if (!gmn.util.isDefined(id)) {
+                    throw new Error('Missing id');
+                }
+                $log.debug('Sending "editNote(' + id + ', ' + title + ')" request to server ');
+                return $http({'method':'PUT',
+                              'content-type': 'application/json',
+                              'url': 'api/notes/' + encodeURIComponent(id),
+                              'data': {'title' : encodeURIComponent(title)}})
+                    .success(function(data){
+                        //default success method
+                        console.log(JSON.stringify(data));
+                    });
             };
 
             notesServiceFactory.DeleteNote = function (id) {

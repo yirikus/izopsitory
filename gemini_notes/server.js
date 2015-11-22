@@ -1,8 +1,13 @@
 var express = require('express');
 var http = require('http');
 var app = express();
+var bodyParser = require('body-parser');
+var multipart = require('connect-multiparty');
 var config = require('config.json')('./dev_config.json');
 app.use(express.static(__dirname + config.staticFolder));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(multipart());
 
 app.get('/', function(req, res) {
     res.sendFile(config.indexPath, {root: __dirname });
@@ -30,7 +35,7 @@ var request = function(req, res, logName, method) {
         });
 
     if (req.body) {
-        req.write(JSON.stringify(req.body));
+        httpReq.write(JSON.stringify(req.body));
     }
     httpReq.end();
 };
