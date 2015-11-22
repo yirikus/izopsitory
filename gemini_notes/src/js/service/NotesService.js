@@ -4,15 +4,15 @@
         function ($http) {
             var notesServiceFactory = {};
 
-            var notes = [
-                {id:'1', title: 'note1'},
-                {id:'2', title: 'note2'},
-                {id:'3', title: 'note3'},
-                {id:'4', title: 'note4'}
-            ];
-
+            /**
+             * Calls service to obtain notes
+             * @returns {*} promise
+             */
             notesServiceFactory.getNotes = function () {
-                return notes;
+                return $http({method:'GET', url: 'api/notes'})
+                    .success(function(data){
+                        console.log(JSON.stringify(data));
+                    });
             };
 
             notesServiceFactory.displayDetail = function (id) {

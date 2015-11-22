@@ -1,14 +1,29 @@
 //started at 19.30 - 1.15
-//20.30 -
+//20.30 - 00.30
+//18.50 -
 (function(){
     'use strict';
-    gmn.app.controller('NotesController', ['NotesService', '$state', '$stateParams',
-        function(NotesService, $state, $stateParams){
+    gmn.app.controller('NotesController', ['NotesService', '$state', '$stateParams', '$log',
+        function(NotesService, $state, $stateParams, $log){
             this.formdata = {};
             this.stateParams = $stateParams;
 
+            var notesCache = [];
+
+            function init() {
+                //init note list cache
+                NotesService.getNotes().success(function(data){
+                    $log.debug('notes cached filled from server:' + JSON.stringify(data));
+                    notesCache = data;
+                });
+            }
+
+            /**
+             * Loads notes from cache
+             * @returns {Array} list of notes
+             */
             this.getNotes = function() {
-                return NotesService.getNotes();
+                return notesCache;
             };
 
             this.displayDetail = function() {
@@ -36,7 +51,9 @@
                 NotesService.editNote(this.stateParams.id,
                                       this.formdata.newTitle );
                 $state.go('^');
-            }
+            };
+
+            init();
 
     }]);
 })();
