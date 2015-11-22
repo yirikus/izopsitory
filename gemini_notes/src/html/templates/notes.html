@@ -2,8 +2,11 @@
     <ul>
         <li data-ng-repeat="note in notes.getNotes()">
             <span>{{note.title}}</span>
-            <button data-ng-click="notes.showEdit(note.id)">edit note</button>
+            <button data-ng-click="notes.showEdit(note.id)">edit</button>
+            <button data-ng-click="notes.showDetail(note.id)">detail</button>
+            <button data-ng-click="notes.deleteNote(note.id)">delete</button>
         </li>
     </ul>
+    <button data-ng-click="notes.showAdd()">Add a note</button>
     <section data-ui-view=""></section>
 </div>

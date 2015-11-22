@@ -17,9 +17,18 @@ var gmn = {};
 
             $stateProvider.state('notes.edit', {
                 url: 'edit/{id}',
-                templateUrl: 'templates/editNote.html',
-                controller: 'NotesController',
-                controllerAs: 'contact'
+                templateUrl: 'templates/noteEdit.html'
+            });
+
+            $stateProvider.state('notes.detail', {
+                url: 'detail/{id}',
+                params: {title:null},
+                templateUrl: 'templates/noteDetail.html'
+            });
+
+            $stateProvider.state('notes.add', {
+                url: 'add/',
+                templateUrl: 'templates/noteAdd.html'
             });
         }]);
 

@@ -1,0 +1,7 @@
+<h1>Edit note</h1>
+<p>
+    <textarea id="editNote" data-ng-model="notes.formdata.noteTitle">
+    </textarea>
+    <button data-ng-click="notes.submitNoteChange(notes.stateParams.id, notes.formdata.newTitle)">Submit</button>
+    <button data-ng-click="notes.goBack()">close</button>
+</p>
