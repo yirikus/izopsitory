@@ -5,9 +5,9 @@ Gulp and Bower is used to build the application.
 Front-end is created using AngularJs, AngularUI-Router and Bootstrap with BoostrapUI wrapper. 
 
 ##requirements
-* Node
-* Bower
-* Gulp
+* Node 
+* Bower (`npm install -g bower`)
+* Gulp (`npm install -g gulp`)
 
 ##build
 `npm install`
