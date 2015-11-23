@@ -1,15 +1,15 @@
 <div data-ng-controller="NotesController as notes">
     <div class="section" id="gmn-header">
         <div class="container">
-            <h1 class="row"><span class="col-xs-9">{{'app_title' | translate}}</span>
-                <span class="col-xs-3"><select class="form-control" data-ng-model="notes.formdata.language" data-ng-options="obj.id as obj.label for obj in notes.languageCodelist" data-ng-change="notes.changeLanguage()"></select></span>
+            <h1 class="row"><span id="gmn-header-title" class="col-xs-9">{{'app_title' | translate}}</span>
+                <span class="col-xs-3"><select id="languageSelector" class="form-control" data-ng-model="notes.formdata.language" data-ng-options="obj.id as obj.label for obj in notes.languageCodelist" data-ng-change="notes.changeLanguage()"></select></span>
             </h1>
         </div>
     </div>
     <div class="section">
         <div class="container">
 
-            <div class="row form-row well" data-ng-repeat="note in notes.getNotes()">
+            <div class="row form-row well gmn-note" data-ng-repeat="note in notes.getNotes()">
                 <div class="col-xs-2 col-md-1"><button class="btn btn-primary btn-xs col-xs-12" data-ng-click="notes.showEdit(note.id)">{{'edit_note' | translate}}</button></div>
                 <div class="col-xs-2 col-md-1"><button class="btn btn-info btn-xs col-xs-12" data-ng-click="notes.showDetail(note.id)">{{'note_detail' | translate}}</button></div>
                 <div class="col-xs-2 col-md-1"><button class="btn btn-danger btn-xs col-xs-12" data-ng-click="notes.deleteNote(note.id)">{{'delete_note' | translate}}</button></div>
@@ -17,7 +17,7 @@
             </div>
 
             <div class="row">
-                <button class="btn btn-success"data-ng-click="notes.showAdd()">{{'add_note' | translate}}</button>
+                <button id="createNoteButton" class="btn btn-success"data-ng-click="notes.showAdd()">{{'add_note' | translate}}</button>
             </div>
         </div>
     </div>

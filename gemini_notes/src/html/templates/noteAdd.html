@@ -2,10 +2,10 @@
     <div class="container">
         <h2>{{'add_note_title' | translate}}</h2>
          <div class="section row">
-            <textarea class="form-control" data-ng-model="notes.formdata.noteTitle"></textarea>
+            <textarea id="noteTitleArea" class="form-control" data-ng-model="notes.formdata.noteTitle"></textarea>
         </div>
         <div class="row">
-            <button class="btn btn-primary" data-ng-click="notes.createNewNote(notes.formdata.noteTitle)">{{'submit_note_add' | translate}}</button>
+            <button id="submitNewNote" class="btn btn-primary" data-ng-click="notes.createNewNote(notes.formdata.noteTitle)">{{'submit_note_add' | translate}}</button>
             <button class="btn btn-secondary" data-ng-click="notes.goBack()">{{'go_back' | translate}}</button>
         </div>
     </div>
