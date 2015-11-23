@@ -14,6 +14,7 @@ To be able to build the application you need the following:
 
 ##Build
 To build the app you just run these commands after repository cloning
+
 `npm install`
 
 `bower install`
