@@ -27,8 +27,14 @@ To run a server, run:
 Server will run by default on http://localhost:9000/ 
 
 ##Running tests
-Update webdriver if necessary
+If running for the first time, download selenium server:
+
 `node node_modules/protractor/bin/webdriver-manager update` 
 
-To run tests
-node node_modules/protractor/bin/protractor protractor-e2e.js 
+Make sure version 2.48.2 is downloaded otherwise seleniumServerJar property in protractor-e2e.js must be updated
+
+Start node server with Gemini-Notes app
+
+Run tests
+
+`node node_modules/protractor/bin/protractor protractor-e2e.js` 
