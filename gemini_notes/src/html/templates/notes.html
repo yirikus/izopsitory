@@ -1,5 +1,5 @@
 <div data-ng-controller="NotesController as notes">
-    <div class="section gmn-header">
+    <div class="section" id="gmn-header">
         <div class="container">
             <h1 class="row"><span class="col-xs-9">{{'app_title' | translate}}</span>
                 <span class="col-xs-3"><select class="form-control" data-ng-model="notes.formdata.language" data-ng-options="obj.id as obj.label for obj in notes.languageCodelist" data-ng-change="notes.changeLanguage()"></select></span>
