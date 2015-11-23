@@ -13,7 +13,6 @@ var gmn = {};
             });
 
             $translateProvider.preferredLanguage('en');
-            $translateProvider.useLocalStorage();
 
             //set up routing
             $urlRouterProvider.otherwise('/');
