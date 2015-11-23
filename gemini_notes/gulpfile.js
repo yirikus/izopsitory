@@ -4,7 +4,6 @@ var sass = require('gulp-ruby-sass');
 var mainBowerFiles = require('main-bower-files');
 var filter = require('gulp-filter');
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
 
 
 gulp.task('build', ['js', 'sass', 'html']);
