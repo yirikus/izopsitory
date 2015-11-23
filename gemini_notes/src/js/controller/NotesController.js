@@ -1,6 +1,3 @@
-//started at 19.30 - 1.15
-//20.30 - 00.30
-//18.50 -
 (function(){
     'use strict';
     gmn.app.controller('NotesController', ['NotesService', '$state', '$stateParams', '$log', '$translate',
