@@ -1,14 +1,25 @@
 <div data-ng-controller="NotesController as notes">
-    <h1>{{'app_title' | translate}}</h1>
-    <select data-ng-model="notes.formdata.language" data-ng-options="obj.id as obj.label for obj in notes.languageCodelist" data-ng-change="notes.changeLanguage()"></select>
-    <ul>
-        <li data-ng-repeat="note in notes.getNotes()">
-            <span>{{note.title}}</span>
-            <button data-ng-click="notes.showEdit(note.id)">{{'edit_note' | translate}}</button>
-            <button data-ng-click="notes.showDetail(note.id)">{{'note_detail' | translate}}</button>
-            <button data-ng-click="notes.deleteNote(note.id)">{{'delete_note' | translate}}</button>
-        </li>
-    </ul>
-    <button data-ng-click="notes.showAdd()">{{'add_note' | translate}}</button>
+    <div class="section gmn-header">
+        <div class="container">
+            <h1 class="row"><span class="col-xs-9">{{'app_title' | translate}}</span>
+                <span class="col-xs-3"><select class="form-control" data-ng-model="notes.formdata.language" data-ng-options="obj.id as obj.label for obj in notes.languageCodelist" data-ng-change="notes.changeLanguage()"></select></span>
+            </h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+
+            <div class="row form-row well" data-ng-repeat="note in notes.getNotes()">
+                <div class="col-xs-2 col-md-1"><button class="btn btn-primary btn-xs col-xs-12" data-ng-click="notes.showEdit(note.id)">{{'edit_note' | translate}}</button></div>
+                <div class="col-xs-2 col-md-1"><button class="btn btn-info btn-xs col-xs-12" data-ng-click="notes.showDetail(note.id)">{{'note_detail' | translate}}</button></div>
+                <div class="col-xs-2 col-md-1"><button class="btn btn-danger btn-xs col-xs-12" data-ng-click="notes.deleteNote(note.id)">{{'delete_note' | translate}}</button></div>
+                <span>{{note.title}}</span>
+            </div>
+
+            <div class="row">
+                <button class="btn btn-success"data-ng-click="notes.showAdd()">{{'add_note' | translate}}</button>
+            </div>
+        </div>
+    </div>
     <section data-ui-view=""></section>
 </div>

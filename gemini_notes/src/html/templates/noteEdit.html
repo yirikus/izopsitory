@@ -1,7 +1,13 @@
-<h1>{{'edit_note_title' | translate}}</h1>
-<p>
-    <textarea id="editNote" data-ng-model="notes.formdata.noteTitle">
-    </textarea>
-    <button data-ng-click="notes.submitNoteChange(notes.stateParams.id, notes.formdata.newTitle)">{{'submit_note_edit' | translate}}</button>
-    <button data-ng-click="notes.goBack()">{{'go_back' | translate}}</button>
-</p>
+<div class="section">
+    <div class="container">
+        <h2>{{'edit_note_title' | translate}}</h2>
+        <div class="section row">
+            <textarea div class="form-control col-xs-12" id="editNote" data-ng-model="notes.formdata.noteTitle">
+            </textarea>
+        </div>
+        <div class="row">
+            <button  class="btn btn-primary" data-ng-click="notes.submitNoteChange(notes.stateParams.id, notes.formdata.noteTitle)">{{'submit_note_edit' | translate}}</button>
+            <button class="btn btn-secondary"data-ng-click="notes.goBack()">{{'go_back' | translate}}</button>
+        </div>
+    </div>
+</div>

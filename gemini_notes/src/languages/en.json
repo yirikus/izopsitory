@@ -3,6 +3,8 @@
     "cz": "\u010Ce\u0161tina",
     "ru": "\u0440\u0443\u0441\u0441\u043A\u0438\u0439",
 
+    "note_id": "Id:",
+    "note_title": "Title:",
     "add_note": "Add a note",
     "note_detail": "Detail",
     "delete_note": "Delete",

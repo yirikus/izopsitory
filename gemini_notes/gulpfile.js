@@ -15,7 +15,6 @@ gulp.task('js', function() {
     gulp.src(mainBowerFiles())
         .pipe(filter('*.js'))
         .pipe(concat('vendor.js'))
-        //.pipe(uglify()) TODO angular friendly minification
         .pipe(gulp.dest(__dirname +  '/public/js'));
 
     //copy javascripts
@@ -37,6 +36,15 @@ gulp.task('html', function() {
 
 //build styles
 gulp.task('sass', function() {
-    return sass('sass/style.sass')
-        .pipe(gulp.dest('public/css'))
+//
+//    return sass('style/main.scss')
+//        .pipe(gulp.dest('public/css'))
+    sass('src/style/main.scss',{
+            style: 'compressed',
+            loadPath: [
+                './bower_components/bootstrap-sass/assets/stylesheets',
+                './bower_components/font-awesome/scss'
+            ]
+            }
+        ).pipe(gulp.dest(__dirname +  '/public/css'));
 });

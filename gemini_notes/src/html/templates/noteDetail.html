@@ -1,5 +1,18 @@
-<h1>{{'note_detail_title' | translate}}</h1>
-<p>
-    <span>id: {{notes.stateParams.id}}</span><span>title: {{notes.stateParams.title}}</span>
-    <button data-ng-click="notes.goBack()">{{'go_back' | translate}}</button>
-</p>
+<div class="section">
+    <div class="container">
+        <h2>{{'note_detail_title' | translate}}</h2>
+        <div class="section row well">
+            <div class="row">
+                <strong class="col-xs-1">{{'note_id' | translate}}</strong>
+                <div class="col-xs-11">{{notes.stateParams.id}}</div>
+            </div>
+            <div class="row">
+                <strong class="col-xs-1">{{'note_title' | translate}}</strong>
+                <div class="col-xs-11"> {{notes.stateParams.title}}</div>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn btn-secondary" data-ng-click="notes.goBack()">{{'go_back' | translate}}</button>
+        </div>
+    </div>
+</div>
